@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 p-2">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Actions</th>
+              </tr>
+              <tr>
+                <th colspan="4" class="text-center">
+                  <button class="btn btn-success btn-sm" routerLink="/users/new">
+                    Create New Record
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users; let user_index = index;">
+                <td>{{ (user_index+1) }}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.location}}</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
