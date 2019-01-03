@@ -1,3 +1,18 @@
-<p>
-  user-create works!
-</p>
+<div class="row">
+  <div class="col-md-4 p-5">
+    <form>
+      <div class="form-group">
+        <label for="userName">Name</label>
+        <input type="text" class="form-control" id="userName" placeholder="Enter user name" [(ngModel)]="userModel.name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="userLocation">Location</label>
+        <input type="text" class="form-control" id="userLocation" placeholder="Enter user location" [(ngModel)]="userModel.location" name="location">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="saveUser()">Submit</button>
+    </form>
+    <!-- <pre>
+      {{ userModel | json }}
+    </pre> -->
+  </div>
+</div>

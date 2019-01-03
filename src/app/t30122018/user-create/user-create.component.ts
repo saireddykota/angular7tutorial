@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-create',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCreateComponent implements OnInit {
 
-  constructor() { }
+  
+  userModel = {
+    name : '',
+    location : ''
+  };
+  constructor(private service: UserService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  saveUser() {
+    this.service.addUser(this.userModel).subscribe((response: any) => {
+      if( response.id > 0) {
+        // alert('user successfully created...');
+        this.router.navigate(['users']);
+      }
+    });
   }
 
 }

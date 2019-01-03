@@ -14,4 +14,8 @@ export class UserService {
     return this.http.get(environment.api_url + '/users');
   }
 
+  addUser(data: any) {
+    return this.http.post(environment.api_url + '/users', data);
+  }
+
 }

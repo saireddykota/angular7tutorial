@@ -22,7 +22,9 @@
                 <td>{{ (user_index+1) }}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.location}}</td>
-                <td>-</td>
+                <td>
+                  <button class="btn btn-sm btn-info" [routerLink]="['/user/' + user.id]">Edit</button>
+                </td>
               </tr>
             </tbody>
           </table>
